@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Asterisk, Leaf, LayoutGrid, ArrowRight, ArrowUpRight, Quote, ArrowLeft } from 'lucide-react';
 import tractorFieldImg from '../assets/tractor_field_1781913872706.png';
 import greenhouseImg from '../assets/greenhouse.png';
@@ -33,22 +34,30 @@ export default function IntegrationPage() {
       <div className="w-full bg-[#FAFAFA] min-h-screen flex flex-col items-center" style={{ paddingTop: '160px', paddingBottom: '120px' }}>
       
       {/* Hero Section */}
-      <div className="w-full flex flex-col items-center text-center" style={{ marginBottom: '80px', width: '85%', maxWidth: '1152px' }}>
+      <motion.div 
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full flex flex-col items-center text-center" style={{ marginBottom: '80px', width: '85%', maxWidth: '1152px' }}
+      >
         
         {/* Top Label */}
-        <div className="flex items-center gap-2" style={{ marginBottom: '24px' }}>
+        <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex items-center gap-2" style={{ marginBottom: '24px' }}>
           <Asterisk size={18} className="text-black" />
           <span className="font-medium font-['Manrope'] text-black tracking-wide" style={{ fontSize: '15px' }}>Integration</span>
-        </div>
+        </motion.div>
 
         {/* Main Heading */}
-        <h1 className="font-normal font-['Geist'] text-black tracking-tight text-[40px] md:text-[64px]" style={{ lineHeight: '1.1', marginBottom: '40px', maxWidth: '1000px' }}>
+        <motion.h1 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="font-normal font-['Geist'] text-black tracking-tight text-[40px] md:text-[64px]" style={{ lineHeight: '1.1', marginBottom: '40px', maxWidth: '1000px' }}>
           One Unified Ecosystem <br className="hidden md:block" />
           for All Your Agricultural Hardware
-        </h1>
+        </motion.h1>
 
         {/* Subtitle with Decorative Elements */}
-        <div className="flex items-center justify-center gap-4 md:gap-6 w-full">
+        <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex items-center justify-center gap-4 md:gap-6 w-full">
           <div className="flex items-center justify-center border border-gray-300 rounded-full flex-shrink-0" style={{ width: '40px', height: '40px' }}>
             <Leaf size={18} className="text-gray-700" />
           </div>
@@ -64,17 +73,26 @@ export default function IntegrationPage() {
           <div className="flex items-center justify-center border border-gray-300 rounded-full flex-shrink-0" style={{ width: '40px', height: '40px' }}>
             <LayoutGrid size={18} className="text-gray-700" />
           </div>
-        </div>
+        </motion.div>
 
-      </div>
+      </motion.div>
 
       {/* Cards Section */}
-      <div className="w-full">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full"
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
           <div className="flex flex-col md:flex-row gap-6 items-stretch">
             
             {/* Card 1: Tractor */}
-            <div className="flex-1 relative overflow-hidden flex flex-col justify-between" style={{ borderRadius: '24px', minHeight: '280px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 relative overflow-hidden flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" style={{ borderRadius: '24px', minHeight: '280px' }}>
               <img src={tractorFieldImg} alt="Tractor spraying field" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               
@@ -89,10 +107,10 @@ export default function IntegrationPage() {
                   Monitor plant health with real-time imaging and AI-powered
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2: Rootwise Dark Green */}
-            <div className="flex-1 flex flex-col justify-between relative" style={{ backgroundColor: '#0E380D', borderRadius: '24px', padding: '32px', minHeight: '280px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col justify-between relative hover:-translate-y-2 transition-transform duration-300 shadow-xl" style={{ backgroundColor: '#0E380D', borderRadius: '24px', padding: '32px', minHeight: '280px' }}>
               <div className="flex justify-between items-start mb-6">
                 <span className="font-['Manrope'] text-white font-medium" style={{ fontSize: '15px' }}>With</span>
                 <span className="font-['Geist'] font-bold text-white tracking-wide" style={{ fontSize: '24px' }}>ROOTWISE</span>
@@ -110,10 +128,10 @@ export default function IntegrationPage() {
                   <ArrowRight size={20} />
                 </div>
               </button>
-            </div>
+            </motion.div>
 
             {/* Card 3: Greenhouse */}
-            <div className="flex-1 relative overflow-hidden flex flex-col justify-between" style={{ borderRadius: '24px', minHeight: '280px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 relative overflow-hidden flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" style={{ borderRadius: '24px', minHeight: '280px' }}>
               <img src={greenhouseImg} alt="Greenhouse interior" className="absolute inset-0 w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
               
@@ -128,31 +146,40 @@ export default function IntegrationPage() {
                   Leverage data-driven insights to make better farming decisions
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Detailed Impact Breakdown Section */}
-      <div className="w-full mt-24 md:mt-32">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full mt-24 md:mt-32"
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
           
           {/* Header */}
-          <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-8 mb-16">
             <h2 className="font-normal font-['Geist'] text-black tracking-tight" style={{ fontSize: '48px', lineHeight: '1.1', maxWidth: '500px' }}>
               Detailed <br className="hidden md:block" /> Impact Breakdown
             </h2>
             <p className="font-['Manrope'] text-gray-600 leading-relaxed" style={{ fontSize: '18px', maxWidth: '480px' }}>
               Reduce fertilizer and water waste by up to 30% using our AI-driven soil sensors. Spend less on inputs while maintaining soil health.
             </p>
-          </div>
+          </motion.div>
 
           {/* 3-Column Content Grid */}
           <div className="flex flex-col md:flex-row gap-6 items-stretch">
             
             {/* Column 1: Info */}
-            <div className="flex-1 flex flex-col justify-between pr-4 pb-8">
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col justify-between pr-4 pb-8">
               <div>
                 <span className="font-['Manrope'] text-black font-medium uppercase tracking-widest mb-6 block" style={{ fontSize: '15px' }}>
                   FARMERS PARTNERED
@@ -182,10 +209,10 @@ export default function IntegrationPage() {
                   Track planting and harvest milestones to optimize yields and manage resources.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Column 2: Rice Card */}
-            <div className="flex-1 relative overflow-hidden flex flex-col justify-end" style={{ borderRadius: '24px', minHeight: '480px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 relative overflow-hidden flex flex-col justify-end hover:-translate-y-2 transition-transform duration-300 shadow-xl" style={{ borderRadius: '24px', minHeight: '480px' }}>
               <img src={agronomyImg} alt="Rice field" className="absolute inset-0 w-full h-full object-cover" />
               
               <div className="relative z-10 m-4 p-6 backdrop-blur-md bg-[#2B4B27]/40 border border-white/10" style={{ borderRadius: '20px' }}>
@@ -215,10 +242,10 @@ export default function IntegrationPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Column 3: Corn Card */}
-            <div className="flex-1 relative overflow-hidden flex flex-col justify-end" style={{ borderRadius: '24px', minHeight: '480px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 relative overflow-hidden flex flex-col justify-end hover:-translate-y-2 transition-transform duration-300 shadow-xl" style={{ borderRadius: '24px', minHeight: '480px' }}>
               <img src={landscapeImg} alt="Corn field" className="absolute inset-0 w-full h-full object-cover" />
               
               <div className="relative z-10 m-4 p-6 backdrop-blur-md bg-[#2B4B27]/40 border border-white/10" style={{ borderRadius: '20px' }}>
@@ -248,28 +275,38 @@ export default function IntegrationPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Supported Manufacturers Section */}
-      <div className="w-full mt-24 md:mt-32 pb-32">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full mt-24 md:mt-32 pb-32"
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
           
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16">
             <h2 className="font-normal font-['Geist'] text-black tracking-tight whitespace-nowrap" style={{ fontSize: '48px', lineHeight: '1.2' }}>
               Supported <br className="hidden md:block" /> Manufacturers & Protocols
             </h2>
             <p className="font-['Manrope'] text-gray-500 leading-relaxed" style={{ fontSize: '16px', maxWidth: '380px' }}>
               Our open API and specialized drivers allow for effortless integration with industry leaders
             </p>
-          </div>
+          </motion.div>
 
           {/* Scrolling Logos */}
-          <div 
+          <motion.div 
+            variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }}
             ref={scrollRef}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}
@@ -329,62 +366,80 @@ export default function IntegrationPage() {
               </div>
 
             </div>
-          </div>
+          </motion.div>
           
         </div>
-      </div>
+      </motion.div>
 
       {/* Stats Section */}
-      <div className="w-full border-t border-gray-200 py-16 md:py-24 mt-8">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full border-t border-gray-200 py-16 md:py-24 mt-8"
+      >
         <div className="mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-0" style={{ width: '85%', maxWidth: '1152px' }}>
           
           {/* Stat 1 */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
+          <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
             <span className="font-normal font-['Geist'] text-black tracking-tight mb-4" style={{ fontSize: '48px', lineHeight: '1' }}>50+</span>
             <span className="font-['Manrope'] text-black font-medium" style={{ fontSize: '15px' }}>Year of Experience</span>
-          </div>
+          </motion.div>
           
           {/* Stat 2 */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
+          <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
             <span className="font-normal font-['Geist'] text-black tracking-tight mb-4" style={{ fontSize: '48px', lineHeight: '1' }}>200+</span>
             <span className="font-['Manrope'] text-black font-medium" style={{ fontSize: '15px' }}>Field in Progress</span>
-          </div>
+          </motion.div>
           
           {/* Stat 3 */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
+          <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full md:border-r border-gray-200">
             <span className="font-normal font-['Geist'] text-black tracking-tight mb-4" style={{ fontSize: '48px', lineHeight: '1' }}>120,000+</span>
             <span className="font-['Manrope'] text-black font-medium" style={{ fontSize: '15px' }}>Farmer Around World</span>
-          </div>
+          </motion.div>
           
           {/* Stat 4 */}
-          <div className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full">
+          <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col items-center justify-center text-center px-4 w-full">
             <span className="font-normal font-['Geist'] text-black tracking-tight mb-4" style={{ fontSize: '48px', lineHeight: '1' }}>$15 Billion</span>
             <span className="font-['Manrope'] text-black font-medium" style={{ fontSize: '15px' }}>Agricultural Product</span>
-          </div>
+          </motion.div>
 
         </div>
-      </div>
+      </motion.div>
 
       </div>
       
       {/* AI Autonomy Section */}
-      <div className="w-full bg-[#0a0a0a] flex flex-col items-center py-24 md:py-32">
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full bg-[#0a0a0a] flex flex-col items-center py-24 md:py-32"
+      >
         <div className="w-[85%] max-w-[1152px]">
           {/* Header Row */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-20">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col md:flex-row justify-between items-start gap-8 mb-20">
             <h2 className="font-['Geist'] text-white font-normal leading-tight" style={{ fontSize: '44px', maxWidth: '800px' }}>
               Intelligent Synergy Where <br className="hidden md:block" /> Hardware Meets AI Autonomy
             </h2>
             <p className="font-['Manrope'] text-gray-400" style={{ fontSize: '16px', maxWidth: '380px', marginTop: '12px' }}>
               By integrating AI at the core of your infrastructure, we turn raw data into autonomous action
             </p>
-          </div>
+          </motion.div>
 
           {/* Cards Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             
             {/* Card 1 */}
-            <div className="bg-[#4CAF50] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px]">
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="bg-[#4CAF50] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] hover:-translate-y-2 transition-transform duration-300">
               <div className="w-14 h-14 rounded-full border border-white flex items-center justify-center mb-8">
                 <Leaf className="text-white" size={24} strokeWidth={1.5} />
               </div>
@@ -394,10 +449,10 @@ export default function IntegrationPage() {
                   Effortlessly onboard drones and sensors. Our AI automatically recognizes hardware signatures and configures optimal data-syncing protocols without a single line of code.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="bg-[#f2f2f2] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px]">
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="bg-[#f2f2f2] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] hover:-translate-y-2 transition-transform duration-300">
               <div className="w-14 h-14 rounded-full border border-gray-400 flex items-center justify-center mb-8">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -410,10 +465,10 @@ export default function IntegrationPage() {
                   Our system runs complex machine learning models directly on the field (Edge Computing), allowing for instant pest detection and irrigation triggers even in total offline zones.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="bg-[#f2f2f2] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px]">
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="bg-[#f2f2f2] rounded-[32px] p-8 flex flex-col justify-between min-h-[380px] hover:-translate-y-2 transition-transform duration-300">
               <div className="w-14 h-14 rounded-full border border-gray-400 flex items-center justify-center mb-8">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M4 17L10 11L4 5M12 19H20" stroke="#000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
@@ -426,17 +481,26 @@ export default function IntegrationPage() {
                   A gateway for developers. Beyond standard data transfer, our API provides access to our proprietary AI inference engines, allowing your custom hardware to benefit from our predictive analytics.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
           </div>
         </div>
-      </div>
+      </motion.div>
       {/* Real Results Section */}
-      <div className="w-full bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}>
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full bg-white" style={{ paddingTop: '120px', paddingBottom: '120px' }}
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
           
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <h2 className="font-['Geist'] text-black tracking-tight flex-1" style={{ fontSize: '48px', lineHeight: '1.1' }}>
               Real Results from <br />
               the Field
@@ -455,16 +519,16 @@ export default function IntegrationPage() {
                 </div>
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Divider */}
-          <div className="w-full bg-gray-200" style={{ height: '1px', margin: '48px 0' }}></div>
+          <motion.div variants={{ hidden: { opacity: 0, scaleX: 0 }, visible: { opacity: 1, scaleX: 1, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="w-full bg-gray-200 origin-left" style={{ height: '1px', margin: '48px 0' }}></motion.div>
 
           {/* Grid Content */}
           <div className="flex flex-col lg:flex-row gap-6">
             
             {/* Left Column (Images) */}
-            <div className="flex flex-col gap-6" style={{ flex: '0 0 32%' }}>
+            <motion.div variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col gap-6" style={{ flex: '0 0 32%' }}>
               <div className="relative w-full overflow-hidden flex-1" style={{ borderRadius: '24px', minHeight: '200px' }}>
                 <img src={tractorFieldImg} alt="Tractor" className="absolute inset-0 w-full h-full object-cover" />
                 <Quote size={48} className="absolute top-6 left-6 text-white fill-white" />
@@ -472,10 +536,10 @@ export default function IntegrationPage() {
               <div className="relative w-full overflow-hidden flex-1" style={{ borderRadius: '24px', minHeight: '200px' }}>
                 <img src={soilHandsImg} alt="Soil" className="absolute inset-0 w-full h-full object-cover" />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column (Testimonial & Cards) */}
-            <div className="flex flex-col gap-6" style={{ flex: '1' }}>
+            <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col gap-6" style={{ flex: '1' }}>
               
               {/* Testimonial */}
               <div className="flex flex-col justify-center bg-white" style={{ flex: 1, padding: '16px 32px' }}>
@@ -550,10 +614,11 @@ export default function IntegrationPage() {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
+            
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

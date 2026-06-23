@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Sun, ArrowRight, ChevronDown, Minus, Plus, ArrowLeft, Quote } from 'lucide-react';
 import calculatorImg from '../assets/calculator.png';
 import tractorFieldImg from '../assets/tractor_field_1781913872706.png';
@@ -27,39 +28,56 @@ export default function CalculatorPage() {
         <div className="absolute inset-0" style={{ backgroundColor: 'rgba(0,0,0,0.45)' }}></div>
         
         {/* Content */}
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-          <div className="flex items-center gap-2" style={{ marginBottom: '20px' }}>
+        <motion.div 
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+          }}
+          className="absolute inset-0 flex flex-col items-center justify-center text-center px-4"
+        >
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex items-center gap-2" style={{ marginBottom: '20px' }}>
             <Sun size={18} className="text-white" />
             <span className="font-medium font-['Manrope'] text-white tracking-wide" style={{ fontSize: '14px' }}>Case Study</span>
-          </div>
+          </motion.div>
 
-          <h1 className="font-normal font-['Geist'] text-white tracking-tight" style={{ fontSize: '56px', lineHeight: '1.1', marginBottom: '20px' }}>
+          <motion.h1 variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="font-normal font-['Geist'] text-white tracking-tight" style={{ fontSize: '56px', lineHeight: '1.1', marginBottom: '20px' }}>
             Quantify <br className="hidden md:block" />
             Your Growth
-          </h1>
+          </motion.h1>
 
-          <p className="font-medium font-['Manrope'] leading-relaxed" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', maxWidth: '700px', marginBottom: '32px' }}>
+          <motion.p variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="font-medium font-['Manrope'] leading-relaxed" style={{ fontSize: '16px', color: 'rgba(255,255,255,0.9)', maxWidth: '700px', marginBottom: '32px' }}>
             See how our precision farming system transforms your operational costs into measurable <br className="hidden md:block" />
             profit. Enter your farm's data below to get a personalized financial projection.
-          </p>
+          </motion.p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-wrap items-center justify-center gap-4">
             <button className="bg-white text-black font-semibold font-['Manrope'] transition-colors hover:bg-gray-100" style={{ borderRadius: '9999px', padding: '14px 28px', fontSize: '14px' }}>
               Start Grow Smarter
             </button>
             <button className="bg-white flex items-center justify-center text-black transition-colors hover:bg-gray-100" style={{ borderRadius: '9999px', width: '48px', height: '48px' }}>
               <ArrowRight size={18} strokeWidth={2} />
             </button>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Calculator Section */}
       <div className="w-full" style={{ marginTop: '140px', marginBottom: '120px' }}>
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
-          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-50px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+            }}
+            className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-stretch"
+          >
             {/* Left Column */}
-            <div className="flex-1 flex flex-col justify-between">
+            <motion.div variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1 flex flex-col justify-between">
               <div>
                 <h2 className="font-['Geist'] text-black tracking-tight" style={{ fontSize: '48px', lineHeight: '1.1', marginBottom: '24px' }}>
                   Cultivating a <br />
@@ -96,10 +114,10 @@ export default function CalculatorPage() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column - Form */}
-            <div className="flex-1">
+            <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex-1">
               <div className="flex flex-col justify-center" style={{ backgroundColor: '#F9F9F9', borderRadius: '24px', padding: '40px', height: '100%' }}>
                 <h3 className="font-['Geist'] font-bold text-black" style={{ fontSize: '24px', marginBottom: '32px' }}>
                   Enter your farm's data below
@@ -178,8 +196,8 @@ export default function CalculatorPage() {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
 
@@ -199,9 +217,18 @@ export default function CalculatorPage() {
           </div>
 
           {/* Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, margin: "-50px" }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+            }}
+            className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          >
             {/* Card 1 */}
-            <div className="flex flex-col justify-between" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
               <div>
                 <span className="font-['Geist'] text-black" style={{ fontSize: '40px', lineHeight: '1', display: 'block', marginBottom: '16px' }}>01.</span>
                 <h3 className="font-['Geist'] font-bold text-black" style={{ fontSize: '20px', marginBottom: '24px' }}>Resource Optimization</h3>
@@ -214,10 +241,10 @@ export default function CalculatorPage() {
                   <ArrowRight size={20} />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 2 */}
-            <div className="flex flex-col justify-between" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
               <div>
                 <span className="font-['Geist'] text-black" style={{ fontSize: '40px', lineHeight: '1', display: 'block', marginBottom: '16px' }}>02.</span>
                 <h3 className="font-['Geist'] font-bold text-black" style={{ fontSize: '20px', marginBottom: '24px' }}>Operational Efficiency</h3>
@@ -230,10 +257,10 @@ export default function CalculatorPage() {
                   <ArrowRight size={20} />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Card 3 */}
-            <div className="flex flex-col justify-between" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col justify-between hover:-translate-y-2 transition-transform duration-300" style={{ backgroundColor: '#F6F6F6', borderRadius: '24px', padding: '40px', minHeight: '380px' }}>
               <div>
                 <span className="font-['Geist'] text-black" style={{ fontSize: '40px', lineHeight: '1', display: 'block', marginBottom: '16px' }}>03.</span>
                 <h3 className="font-['Geist'] font-bold text-black" style={{ fontSize: '20px', marginBottom: '24px' }}>Yield Enhancement</h3>
@@ -246,51 +273,69 @@ export default function CalculatorPage() {
                   <ArrowRight size={20} />
                 </button>
               </div>
-            </div>
+            </motion.div>
 
-          </div>
+          </motion.div>
         </div>
       </div>
 
       {/* Metrics Section */}
-      <div className="w-full bg-white" style={{ marginBottom: '80px' }}>
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full bg-white" style={{ marginBottom: '80px' }}
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px', borderTop: '1px solid #EAEAEA', borderBottom: '1px solid #EAEAEA', padding: '48px 0' }}>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-12">
             
             {/* Metric 1 */}
-            <div className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
               <span className="font-['Geist'] text-black tracking-tight whitespace-nowrap" style={{ fontSize: '45px', lineHeight: '1.2', marginBottom: '16px' }}>50+</span>
               <span className="font-['Manrope'] font-medium text-center" style={{ fontSize: '15px', color: '#111' }}>Year of Experience</span>
-            </div>
+            </motion.div>
 
             {/* Metric 2 */}
-            <div className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
               <span className="font-['Geist'] text-black tracking-tight whitespace-nowrap" style={{ fontSize: '45px', lineHeight: '1.2', marginBottom: '16px' }}>200+</span>
               <span className="font-['Manrope'] font-medium text-center" style={{ fontSize: '15px', color: '#111' }}>Field in Progress</span>
-            </div>
+            </motion.div>
 
             {/* Metric 3 */}
-            <div className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col items-center justify-center lg:border-r border-gray-200" style={{ padding: '0 10px' }}>
               <span className="font-['Geist'] text-black tracking-tight whitespace-nowrap" style={{ fontSize: '45px', lineHeight: '1.2', marginBottom: '16px' }}>120,000+</span>
               <span className="font-['Manrope'] font-medium text-center" style={{ fontSize: '15px', color: '#111' }}>Farmer Around World</span>
-            </div>
+            </motion.div>
 
             {/* Metric 4 */}
-            <div className="flex flex-col items-center justify-center" style={{ padding: '0 10px' }}>
+            <motion.div variants={{ hidden: { opacity: 0, y: 50 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col items-center justify-center" style={{ padding: '0 10px' }}>
               <span className="font-['Geist'] text-black tracking-tight whitespace-nowrap" style={{ fontSize: '45px', lineHeight: '1.2', marginBottom: '16px' }}>$15 Billion</span>
               <span className="font-['Manrope'] font-medium text-center" style={{ fontSize: '15px', color: '#111' }}>Agricultural Product</span>
-            </div>
+            </motion.div>
 
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Real Results Section */}
-      <div className="w-full bg-white" style={{ paddingBottom: '120px' }}>
+      <motion.div 
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, margin: "-50px" }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.15 } }
+        }}
+        className="w-full bg-white" style={{ paddingBottom: '120px' }}
+      >
         <div className="mx-auto" style={{ width: '85%', maxWidth: '1152px' }}>
           
           {/* Header */}
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
+          <motion.div variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8">
             <h2 className="font-['Geist'] text-black tracking-tight flex-1" style={{ fontSize: '48px', lineHeight: '1.1' }}>
               Real Results from <br />
               the Field
@@ -309,16 +354,16 @@ export default function CalculatorPage() {
                 </div>
               </button>
             </div>
-          </div>
+          </motion.div>
 
           {/* Divider */}
-          <div className="w-full bg-gray-200" style={{ height: '1px', margin: '48px 0' }}></div>
+          <motion.div variants={{ hidden: { opacity: 0, scaleX: 0 }, visible: { opacity: 1, scaleX: 1, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="w-full bg-gray-200 origin-left" style={{ height: '1px', margin: '48px 0' }}></motion.div>
 
           {/* Grid Content */}
           <div className="flex flex-col lg:flex-row gap-6">
             
             {/* Left Column (Images) */}
-            <div className="flex flex-col gap-6" style={{ flex: '0 0 32%' }}>
+            <motion.div variants={{ hidden: { opacity: 0, x: -50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col gap-6" style={{ flex: '0 0 32%' }}>
               <div className="relative w-full overflow-hidden flex-1" style={{ borderRadius: '24px', minHeight: '200px' }}>
                 <img src={tractorFieldImg} alt="Tractor" className="absolute inset-0 w-full h-full object-cover" />
                 <Quote size={48} className="absolute top-6 left-6 text-white fill-white" />
@@ -326,10 +371,10 @@ export default function CalculatorPage() {
               <div className="relative w-full overflow-hidden flex-1" style={{ borderRadius: '24px', minHeight: '200px' }}>
                 <img src={soilHandsImg} alt="Soil" className="absolute inset-0 w-full h-full object-cover" />
               </div>
-            </div>
+            </motion.div>
 
             {/* Right Column (Testimonial & Cards) */}
-            <div className="flex flex-col gap-6" style={{ flex: '1' }}>
+            <motion.div variants={{ hidden: { opacity: 0, x: 50 }, visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 70, damping: 18 } } }} className="flex flex-col gap-6" style={{ flex: '1' }}>
               
               {/* Testimonial */}
               <div className="flex flex-col justify-center bg-white" style={{ flex: 1, padding: '16px 32px' }}>
@@ -404,10 +449,10 @@ export default function CalculatorPage() {
                 </div>
 
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }
