@@ -1,16 +1,53 @@
-# React + Vite
+# ROOTWISE - Precision Farming & Agricultural Technology Template
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ROOTWISE is a premium, modern, and highly dynamic React template designed for Agricultural Technology, Smart Farming, and Precision Agriculture platforms. 
 
-Currently, two official plugins are available:
+Built with React, Vite, Tailwind CSS, and Framer Motion, it features smooth scroll-triggered animations and a polished aesthetic designed for high conversions and professional brand representation.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Key Features
+- **Cinematic Animations**: Powered by Framer Motion, featuring smooth stagger effects and spring physics across all pages.
+- **Premium Aesthetics**: Modern "Glassmorphism" touches, balanced white space, and a curated dark/light color palette suitable for modern ag-tech.
+- **Fully Responsive**: Flawless experience on Desktop, Tablet, and Mobile.
+- **Lightning Fast**: Built on Vite for instantaneous hot-module replacement and optimized production builds.
+- **Component-Driven**: Easy to customize, scale, and integrate into your own React application.
 
-## React Compiler
+## Tech Stack
+- **React 18**
+- **Vite**
+- **Tailwind CSS**
+- **Framer Motion**
+- **React Router DOM**
+- **Lucide React (Icons)**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
 
-## Expanding the ESLint configuration
+1. **Install Dependencies**
+   Make sure you have [Node.js](https://nodejs.org/) installed, then run:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. **Run Development Server**
+   ```bash
+   npm run dev
+   ```
+   Open your browser and navigate to `http://localhost:5173`.
+
+3. **Build for Production**
+   ```bash
+   npm run build
+   ```
+   This will generate a `dist` folder containing the optimized production files.
+
+## Pages Included
+- **Homepage**: Features a cinematic hero animation and comprehensive overview.
+- **Pricing**: Dynamic pricing cards with annual/monthly toggles.
+- **Calculator**: An interactive ROI calculator to quantify agricultural growth.
+- **Integration**: Showcasing API connectivity and supported hardware with infinite scrolling logos.
+- **Dashboard / Admin**: A fully-featured dark-mode application dashboard for agricultural analytics.
+
+## Support
+If you have any questions or need support, please contact the author via your UI8 purchase dashboard.
+
+---
+*Created with ❤️ by ROOTWISE Team.*
