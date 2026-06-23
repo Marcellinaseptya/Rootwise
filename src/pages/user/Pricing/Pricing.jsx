@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Sun, Leaf, Atom, Check } from 'lucide-react';
-import { Testimonials, FAQ } from '../components/HomePage/Homepage';
+import { Testimonials, FAQ } from '../Home/Home';
 
 export default function PricingPage() {
   const [isAnnual, setIsAnnual] = useState(true);

@@ -9,13 +9,13 @@ import {
   ChevronDown,
   TrendingUp
 } from 'lucide-react';
-import DashboardLayout from '../components/DashboardLayout';
+import DashboardLayout from '../../../components/DashboardLayout';
 
 // Try to import images, fallback to placeholders if they fail
-import riceImg from '../assets/rice_product_1782114824857.png';
-import cornImg from '../assets/corn_product_1782114835010.png';
-import cabbageImg from '../assets/cabbage_product_1782114845806.png';
-import tomatoImg from '../assets/tomato_product_1782114858018.png';
+import riceImg from '../../../assets/rice_product_1782114824857.png';
+import cornImg from '../../../assets/corn_product_1782114835010.png';
+import cabbageImg from '../../../assets/cabbage_product_1782114845806.png';
+import tomatoImg from '../../../assets/tomato_product_1782114858018.png';
 
 export default function InventoryPage() {
   

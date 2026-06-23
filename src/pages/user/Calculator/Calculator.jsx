@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Sun, ArrowRight, ChevronDown, Minus, Plus, ArrowLeft, Quote } from 'lucide-react';
-import calculatorImg from '../assets/calculator.png';
-import tractorFieldImg from '../assets/tractor_field_1781913872706.png';
-import soilHandsImg from '../assets/soil_hands_1781913896646.png';
-import avatarImg from '../assets/avatar_michael_1781913917589.png';
+import calculatorImg from '../../../assets/calculator.png';
+import tractorFieldImg from '../../../assets/tractor_field_1781913872706.png';
+import soilHandsImg from '../../../assets/soil_hands_1781913896646.png';
+import avatarImg from '../../../assets/avatar_michael_1781913917589.png';
 
 export default function CalculatorPage() {
   return (

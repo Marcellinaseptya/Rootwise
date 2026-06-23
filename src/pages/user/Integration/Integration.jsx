@@ -1,12 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Asterisk, Leaf, LayoutGrid, ArrowRight, ArrowUpRight, Quote, ArrowLeft } from 'lucide-react';
-import tractorFieldImg from '../assets/tractor_field_1781913872706.png';
-import greenhouseImg from '../assets/greenhouse.png';
-import agronomyImg from '../assets/agronomy.png';
-import landscapeImg from '../assets/landscape.png';
-import soilHandsImg from '../assets/soil_hands_1781913896646.png';
-import avatarImg from '../assets/avatar_michael_1781913917589.png';
+import tractorFieldImg from '../../../assets/tractor_field_1781913872706.png';
+import greenhouseImg from '../../../assets/greenhouse.png';
+import agronomyImg from '../../../assets/agronomy.png';
+import landscapeImg from '../../../assets/landscape.png';
+import soilHandsImg from '../../../assets/soil_hands_1781913896646.png';
+import avatarImg from '../../../assets/avatar_michael_1781913917589.png';
 
 export default function IntegrationPage() {
   const scrollRef = React.useRef(null);
