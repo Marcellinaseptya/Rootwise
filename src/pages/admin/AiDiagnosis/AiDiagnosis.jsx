@@ -13,7 +13,7 @@ import landscapeImg from '../../../assets/landscape.png';
 import tractorImg from '../../../assets/tractor_field_1781913872706.png';
 import soilHandsImg from '../../../assets/soil_hands_1781913896646.png';
 import plantImg from '../../../assets/plant.png';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 
 export default function AiDiagnosisPage() {
   return (

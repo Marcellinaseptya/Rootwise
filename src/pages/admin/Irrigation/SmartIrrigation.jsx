@@ -13,7 +13,7 @@ import {
   ThermometerSun,
   Power
 } from 'lucide-react';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 
 export default function SmartIrrigationPage() {
   return (

@@ -1,19 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './components/Navbar';
+import Navbar from './layouts/Navbar';
 import Homepage from './pages/user/Home/Home';
 import PricingPage from './pages/user/Pricing/Pricing';
 import CalculatorPage from './pages/user/Calculator/Calculator';
 import IntegrationPage from './pages/user/Integration/Integration';
-import FieldAnalyticsPage from './pages/admin/Analytics/Analytics';
+import FieldAnalyticsPage from './pages/admin/FieldStats/FieldStats';
 import DashboardPage from './pages/admin/Dashboard/Dashboard';
 import AiDiagnosisPage from './pages/admin/AiDiagnosis/AiDiagnosis';
 import SmartIrrigationPage from './pages/admin/Irrigation/SmartIrrigation';
 import WeatherInsightPage from './pages/admin/Weather/WeatherInsight';
 import InventoryPage from './pages/admin/Inventory/Inventory';
 import LivestockPage from './pages/admin/Livestock/Livestock';
-import Footer from './components/Footer';
-import SplashScreen from './components/SplashScreen';
+import Footer from './layouts/Footer';
+import SplashScreen from './layouts/SplashScreen';
 import { motion, AnimatePresence } from 'framer-motion';
 import './App.css';
 

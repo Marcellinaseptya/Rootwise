@@ -9,7 +9,7 @@ import {
   CloudRain, 
   Wind 
 } from 'lucide-react';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 import landscapeImg from '../../../assets/landscape.png';
 
 export default function WeatherInsightPage() {

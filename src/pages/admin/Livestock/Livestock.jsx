@@ -3,7 +3,7 @@ import {
   Sparkles, Wind, SunDim, PlusCircle, ArrowUpCircle, 
   ChevronDown, MoreVertical, Maximize2, User, PiggyBank, HandCoins 
 } from 'lucide-react';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 
 export default function LivestockPage() {
   

@@ -8,7 +8,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import landscapeImg from '../../../assets/landscape.png';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 
 export default function DashboardPage() {
   return (

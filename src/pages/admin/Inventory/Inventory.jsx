@@ -9,7 +9,7 @@ import {
   ChevronDown,
   TrendingUp
 } from 'lucide-react';
-import DashboardLayout from '../../../components/DashboardLayout';
+import DashboardLayout from '../../../layouts/DashboardLayout';
 
 // Try to import images, fallback to placeholders if they fail
 import riceImg from '../../../assets/rice_product_1782114824857.png';
